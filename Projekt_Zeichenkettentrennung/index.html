@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeichenkettentrennung</title>
+    <style>
+        body
+        {
+            font-family: sans-serif;
+            width: 600px;
+            background: linear-gradient(orange, pink);
+            height: 100vh; 
+            overflow: hidden;
+            margin-inline: auto;
+        }
+
+        .outputWrapper
+        {
+            margin-top: 24px ;
+            border: 1px solid grey;
+            height: 300px;
+            background-color: white;
+        }
+
+        body form
+        {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+        }
+
+        body form div 
+        {
+            margin-top: 12px;
+        }
+
+        body form div:nth-last-of-type(1) 
+        {
+            align-self: center;
+        }
+
+        body form div:nth-last-of-type(1) input
+        {
+            padding: 10px 40px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <p>Zu trennende Zeichenkette</p>
+        <input type="text" name="" id="textInput" maxlength="200">
+        <p>Wo trennen?</p>
+        <input type="text" name="" id="textSplitPoint">
+        <div>
+            <label for="befor">Davor</label>
+            <input type="radio" name="select" id="inputSplitBefore">
+            <label for="befor">Danach</label>
+            <input type="radio" name="select" id="inputSplitAfter">
+        </div>
+        <div>
+            <input onclick="splitMyText()" type="submit" name="" value="Klick mich" id="splitButton">
+        </div>
+    </form>
+    <div class="outputWrapper">
+        <p id="outputFirstPart"></p>
+        <p id="outputSecondPart"></p>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
